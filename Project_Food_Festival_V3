@@ -1,0 +1,151 @@
+package proj;
+
+import java.util.Scanner;
+
+public class Project1 {
+
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+
+        String response;
+        String name = null;
+        int choice = -1;
+        int appetizer = -1;
+        int mainCourse = -1;
+        int dessert = -1;
+        int toppings = -1;
+        int t = -1;
+        int top = -1;
+        String orderA = null;
+        String orderM = null;
+        String orderD = null;
+
+        System.out.println("Welcome to the food festival!");
+        System.out.println("Would you like to place an order?");
+        response = scnr.nextLine();
+
+        while (true) {
+            if (response.equalsIgnoreCase("No")) {
+                System.out.println("Thank you for stopping by, maybe next time you'll sample our menu.");
+                break;
+            } else if (response.equalsIgnoreCase("Yes")) {
+                System.out.println("What is your name for the order?");
+                name = scnr.nextLine();
+                break;
+            }
+            System.out.println("Would you like to place an order?");
+            response = scnr.nextLine();
+        }
+
+        if (response.equalsIgnoreCase("Yes")) {
+            while (choice != 0) {
+                System.out.println("Select from menu, " + name);
+                System.out.println("0 - Nothing");
+                System.out.println("1 - Appetizer");
+                System.out.println("2 - Main Course");
+                System.out.println("3 - Dessert");
+                System.out.println("Enter the number for your selection: ");
+                choice = scnr.nextInt();
+
+                if (choice == 1) {
+                    while (appetizer != 0) {
+                        System.out.println("Appetizer menu: ");
+                        System.out.println("0 - Nothing");
+                        System.out.println("1 - Potato Skins");
+                        System.out.println("2 - Mozztarella Sticks");
+                        System.out.println("3 - Wings");
+                        System.out.println("Enter the number for your selection: ");
+                        appetizer = scnr.nextInt();
+                        System.out.print("Appetizer menu: [ ");
+                        if (appetizer == 1) {
+                            orderA = "Potato Skins:";
+                            System.out.println(orderA);
+                        }
+                        if (appetizer == 2) {
+                            orderA = "Mozztarella Sticks:";
+                            System.out.println(orderA);
+                        }
+                        if (appetizer == 3) {
+                            orderA = "Wings:";
+                            System.out.println(orderA);
+                        }
+
+                        do {
+                            System.out.println("Toppings menu: ");
+                            System.out.println("0 - Nothing");
+                            System.out.println("1 - Paprika");
+                            System.out.println("2 - Olives");
+                            System.out.println("3 - Gravy");
+                            System.out.println("Enter the number for your selection: ");
+                            toppings = scnr.nextInt();
+
+                            if (toppings == 1) {
+                                orderA = orderA + ", Paprika";
+                                System.out.println(orderA);
+                            }
+                            if (toppings == 2) {
+                                orderA = orderA + ", Olives";
+                                System.out.println(orderA);
+                            }
+                            if (toppings == 3) {
+                                orderA = orderA + ", Gravy";
+                                System.out.println(orderA);
+                            }
+                        } while (toppings != 0);
+                    }
+                    System.out.println(orderA + " ]");
+                } else if (choice == 2) {
+                    while (mainCourse != 0) {
+                        System.out.println("Main Course menu: ");
+                        System.out.println("0 - Nothing");
+                        System.out.println("1 - Fish");
+                        System.out.println("2 - Steak");
+                        System.out.println("3 - Vegetarian");
+                        System.out.println("4 - Chicken");
+                        mainCourse = scnr.nextInt();
+                        System.out.print("Main Course: [ ");
+                        if (mainCourse == 1) {
+                            orderM = "Fish:";
+                            System.out.println(orderM);
+                        }
+                        if (mainCourse == 2) {
+                            orderM = "Steak:";
+                            System.out.println(orderM);
+                        }
+                        if (mainCourse == 3) {
+                            orderM = "Vegetarian:";
+                            System.out.println(orderM);
+                        }
+                        if (mainCourse == 4) {
+                            orderM = "Chicken:";
+                            System.out.println(orderM);
+                        }
+
+                        do {
+                            System.out.println("Toppings menu: ");
+                            System.out.println("0 - Nothing");
+                            System.out.println("1 - Paprika");
+                            System.out.println("2 - Olives");
+                            System.out.println("3 - Gravy");
+                            System.out.println("Enter the number for your selection: ");
+                            t = scnr.nextInt();
+                            if (t == 1) {
+                                orderM = orderM + ", Paprika";
+                                System.out.println(orderM);
+                            }
+                            if (t == 2) {
+                                orderM = orderM + ", Olives";
+                                System.out.println(orderM);
+                            }
+                            if (t == 3) {
+                                orderM = orderM + ", Gravy";
+                                System.out.println(orderM);
+                            }
+                        } while (t != 0);
+                    }
+                    System.out.println(orderM + " ]");
+                }
+            }
+        }
+    }
+}
